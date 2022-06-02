@@ -17,6 +17,7 @@ class Solution {
         return isSame && diagonal;
     }
     public double getSide(int[] p1,int[] p2){
-        return Math.pow((Math.pow((p1[0]-p2[0]),2)+Math.pow((p1[1]-p2[1]),2)),2);
+        // return Math.pow((Math.pow((p1[0]-p2[0]),2)+Math.pow((p1[1]-p2[1]),2)),2);
+        return (p1[0]-p2[0])*(p1[0]-p2[0]) + (p1[1]-p2[1])*(p1[1]-p2[1]);
     }
 }
