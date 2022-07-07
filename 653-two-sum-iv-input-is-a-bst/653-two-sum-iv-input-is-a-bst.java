@@ -18,9 +18,7 @@ class Solution {
         if(node==null){
             return false;
         }
-        if(node.left==null && node.right==null && node.val!=k) {
-            return false;
-        }
+    
         return findTarget(node,node,k);
 //         HashSet<Integer> set=new HashSet<>();
 //         return targetSum(node, k, set);
