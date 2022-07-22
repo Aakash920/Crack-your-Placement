@@ -1,9 +1,9 @@
 class Solution {
     public boolean canJump(int[] nums) {
-        int n=nums.length;
-        return canJump(nums,new boolean[n]);
+        return countPaths(nums);
     }
-    private boolean canJump(int[] nums, boolean[] dp){
+    private boolean countPaths(int[] nums){
+        boolean[] dp=new boolean[nums.length];
         int n=dp.length;
         dp[n-1]=true;
         
