@@ -14,21 +14,22 @@
  * }
  */
 class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode node) {
         List<Integer> list=new ArrayList<>();
-        if(root==null) return list;
-        Stack<TreeNode> st=new Stack<>();
-        st.push(root);
-        while(!st.isEmpty()){
-            root=st.pop();
-            list.add(root.val);
+        if(node==null) return list;
+        Stack<TreeNode> s=new Stack<>();
+        s.push(node);
+        while(!s.isEmpty()){
+            node=s.pop();
+            list.add(node.val);
             
-            if(root.right!=null){
-                st.push(root.right);
+            if(node.right!=null){
+                s.push(node.right);
             }
-            if(root.left!=null){
-                st.push(root.left);
+            if(node.left!=null){
+                s.push(node.left);
             }
+            
         }
         return list;
     }
