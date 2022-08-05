@@ -21,29 +21,28 @@ class Solution {
         q.addLast(root);
         q.addLast(null);
         int max=Integer.MIN_VALUE;
+        
         while(!q.isEmpty()){
             int len=q.size();
             for(int i=0 ; i<len ; i++){
                 TreeNode remove=q.removeFirst();
-                    if(remove!=null){
-                        max=Math.max(max,remove.val);
+                if(remove!=null){
+                    max=Math.max(max,remove.val);
                     
-                    if(remove.left!=null){
+                    if(remove.left!=null)
                         q.addLast(remove.left);
-                    }
-                    if(remove.right!=null){
+                    if(remove.right!=null)
                         q.addLast(remove.right);
-                    } 
+
                 }else{
-                        list.add(max);
-                        max=Integer.MIN_VALUE;
-                        if(!q.isEmpty()){
-                            q.add(null);
-                        }
+                    list.add(max);
+                    max=Integer.MIN_VALUE;
+                    if(!q.isEmpty()){
+                        q.addLast(null);
                     }
+                }
             }
-            
-        }
+        }  
         return list;
     }
 }
