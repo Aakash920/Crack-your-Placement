@@ -1,0 +1,19 @@
+class Solution{
+    //Function to find the leaders in the array.
+    static ArrayList<Integer> leaders(int arr[], int n){
+        ArrayList<Integer> list=new ArrayList<>();
+        Stack<Integer> s=new Stack<>();
+        int clead=arr[n-1];
+        s.push(clead);
+        for(int i=n-2 ; i>=0 ; i--){
+            if(arr[i]>=clead){
+                s.push(arr[i]);
+                clead=arr[i];
+            }
+        }
+        while(!s.isEmpty()){
+            list.add(s.pop());
+        }
+        return list;
+}
+}
