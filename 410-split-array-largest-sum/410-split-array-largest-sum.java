@@ -1,12 +1,12 @@
 class Solution {
     public int splitArray(int[] nums, int m) {
         int sum=0;
-        int min=Integer.MIN_VALUE;
+        int max=Integer.MIN_VALUE;
         for(int x:nums){
             sum+=x;
-            min=Math.max(min,x);
+            max=Math.max(max,x);
         }
-        int lo=min;
+        int lo=max;
         int hi=sum;
         int ans=0;
         while(lo<=hi){
