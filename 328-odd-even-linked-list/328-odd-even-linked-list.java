@@ -23,7 +23,7 @@ class Solution {
                 ListNode nn=new ListNode();
                 nn.val=slow.val;
                 first.next=nn;
-                nn.next=null;
+                // nn.next=null;
                 first=first.next;
             }
             slow=slow.next;
@@ -42,7 +42,7 @@ class Solution {
                 ListNode nn=new ListNode();
                 nn.val=fast.val;
                 sec.next=nn;
-                nn.next=null;
+                // nn.next=null;
                 sec=sec.next;
             }
             fast=fast.next;
