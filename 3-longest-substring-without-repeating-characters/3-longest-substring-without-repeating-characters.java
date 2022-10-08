@@ -14,25 +14,60 @@ class Solution {
         // return len;
         
         //by HashSet
-        Set<Character>set=new HashSet<>();
-        int i=0,j=0;
+        // Set<Character>set=new HashSet<>();
+        // int i=0,j=0;
+        // int ans=0;
+        // while(j<s.length()){
+        //     char x=s.charAt(j);
+        //     if(!set.contains(x)){
+        //         set.add(x);
+        //     }
+        //     else{
+        //         if(set.size()>ans)ans=set.size();
+        //         while(s.charAt(i)!=x){
+        //             set.remove(s.charAt(i));
+        //             i++;
+        //         }
+        //         i++;
+        //     }
+        //     j++;
+        // }
+        // if(set.size()>ans)return set.size();
+        // return ans;
+        
+        
+        HashMap<Character, Integer> map=new HashMap<>();
+        int i=-1, j=-1;
         int ans=0;
-        while(j<s.length()){
-            char x=s.charAt(j);
-            if(!set.contains(x)){
-                set.add(x);
-            }
-            else{
-                if(set.size()>ans)ans=set.size();
-                while(s.charAt(i)!=x){
-                    set.remove(s.charAt(i));
-                    i++;
-                }
+        while(true){
+            boolean f1=false;
+            boolean f2=false;
+            //aquire
+            while(i<s.length()-1){
+                f1=true;
                 i++;
+                char ch=s.charAt(i);
+                map.put(ch,map.getOrDefault(ch,0)+1);
+                
+                if(map.get(ch)==2){
+                    break;
+                }else{
+                    int len=i-j;
+                    ans=Math.max(ans,len);
+                }
             }
-            j++;
+            //release
+            while(j<i){
+                f2=true;
+                j++;
+                char ch=s.charAt(j);
+                map.put(ch,map.get(ch)-1);
+                if(map.get(ch)==1){
+                    break;
+                } 
+            }
+            if(f1==false || f2==false) break;
         }
-        if(set.size()>ans)return set.size();
         return ans;
     }
 }
