@@ -37,7 +37,7 @@ class GFG {
 
 class Solution {
     public long minIncrements(int[] arr, int n) {
-        Arrays.sort(arr);
+        // Arrays.sort(arr);
         HashSet<Integer> set=new HashSet<>();
         set.add(arr[n-1]);
         int count=0;
