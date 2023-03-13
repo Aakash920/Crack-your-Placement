@@ -2,15 +2,14 @@ class Solution {
     public List<List<Integer>> fourSum(int[] arr, int target) {
         List<List<Integer>> ans=new ArrayList<>();
         if(arr==null || arr.length==0) return ans;
-        if(target==-294967296 || target==294967296) return ans;
         Arrays.sort(arr);
         for(int i=0 ; i<arr.length ; i++){
             for(int j=i+1 ; j<arr.length ; j++){
-                int mtar=target-arr[j]-arr[i];
+                long mtar=(long)target-(long) arr[j]-(long) arr[i];
                 int left=j+1, right=arr.length-1;
                 
                 while(left<right){
-                    int sum=arr[left]+arr[right];
+                    long sum=(long) arr[left]+(long) arr[right];
                     if(sum<mtar){
                         left++;
                     }else if(sum>mtar){
