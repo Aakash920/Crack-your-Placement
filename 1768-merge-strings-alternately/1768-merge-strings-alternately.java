@@ -7,6 +7,7 @@ class Solution {
         }
         while(i<s1.length()) sb.append(s1.charAt(i++));
         while(j<s2.length()) sb.append(s2.charAt(j++));
+        
         return sb.toString();
     }
 }
