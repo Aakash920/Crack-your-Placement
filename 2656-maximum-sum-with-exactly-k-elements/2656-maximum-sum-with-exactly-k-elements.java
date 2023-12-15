@@ -10,13 +10,24 @@ class Solution {
         // }
         // return sum;
         
-        PriorityQueue<Integer> pq=new PriorityQueue<>(Collections.reverseOrder());
+        // PriorityQueue<Integer> pq=new PriorityQueue<>(Collections.reverseOrder());
+        // int sum=0;
+        // for(int i:nums) pq.add(i);
+        // while(k>0){
+        //     sum+=pq.peek();
+        //     pq.add(pq.peek()+1);
+        //     k--;
+        // }
+        // return sum;
+        
         int sum=0;
-        for(int i:nums) pq.add(i);
-        while(k>0){
-            sum+=pq.peek();
-            pq.add(pq.peek()+1);
-            k--;
+        int max=Integer.MIN_VALUE;
+        for(int i:nums) 
+            max=i>max ? max=i : max;
+        
+        while(k-->0){
+            sum+=max;
+            max++;
         }
         return sum;
     }
